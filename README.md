@@ -35,3 +35,21 @@ cv2_imshow(pixels),
 #display(pixels),
 print( 'number of detected faces :' ,len(bboxes))
 
+
+def resize(img):
+   print('Original Dimensions : ',img.shape)
+   scale_percent = 60 
+   width = int(img.shape[1] * scale_percent / 300)
+   height = int(img.shape[0] * scale_percent / 300)
+   dim = (width, height)
+   
+   resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+    
+   print('Resized Dimensions : ',resized.shape)
+    
+   #cv2_imshow(resized)
+   
+   #cv2.waitKey(0)
+   #cv2.destroyAllWindows()
+   return resized
+
